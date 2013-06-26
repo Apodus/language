@@ -151,7 +151,7 @@ if( isset($_POST['ANSWER']) )
 	$propertyArray = $_POST['PROPERTY'];
 	foreach($answersArray as $key => $val) {
 		$quizResult = array();
-		exec("./french.exe " . $_COOKIE["user"] . " GRADE1 " . $indexArray[$key] . " " . $propertyArray[$key] . " " . $val, $quizResult);
+		exec("./french.exe " . $_COOKIE["user"] . " GRADE1 " . $indexArray[$key] . " " . $propertyArray[$key] . " " . preg_replace('/[\ \&\\\|\<\>\+\-\*\/0-9]*/','',$val), $quizResult);
 		foreach ($quizResult as $value) {
 			echo $value . "<br/>\n";
 		}
@@ -165,7 +165,7 @@ echo "<h2>Your current score: " . exec("./french.exe " . $_COOKIE["user"] . " GE
 if( isset($_POST['FIND']) )
 {
   $findArray = array();
-  exec("./french.exe " . $_COOKIE["user"] . " FIND " . $_POST['FIND'], $findArray);
+  exec("./french.exe " . $_COOKIE["user"] . " FIND " . preg_replace('/[\ \&\\\|\<\>\+\-\*\/0-9]*/','', $_POST['FIND']), $findArray);
   foreach ($findArray as $value)
   {
 	echo $value . "\n";
