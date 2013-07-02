@@ -1,16 +1,16 @@
 
 #pragma once
 
-#include <string>
 #include <vector>
 #include <algorithm>
+#include "utf8.hpp"
 
 namespace {
 
-int editDistance(const std::string& a, const std::string& b) {
+int editDistance(const utf8& a, const utf8& b) {
 	std::vector<std::vector<int>> m;
 	m.resize(a.size() + 1);
-	for(int i=0; i<m.size(); ++i) {
+	for(size_t i=0; i<m.size(); ++i) {
 		std::vector<int>& internal = m[i];
 		internal.resize(b.size() + 1, 0);
 	}

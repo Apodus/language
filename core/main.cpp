@@ -9,7 +9,7 @@
 
 #include "output.hpp"
 #include "verb.hpp"
-#include "edit_distance.hpp"
+#include "util/edit_distance.hpp"
 #include "userSettings.hpp"
 
 void editTest(const std::string& a, const std::string& b) {

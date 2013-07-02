@@ -1,6 +1,6 @@
 
 #include "output.hpp"
-#include "edit_distance.hpp"
+#include "util/edit_distance.hpp"
 
 #include <iostream>
 
